@@ -106,8 +106,12 @@
         //withdraw button event handler
         const withdrawBtn = document.getElementById("addWithdraw").addEventListener("click", () => {
             const withdrawNumber = getInputNumber("withdrawAmount");
-            console.log(withdrawNumber);
 
+            updateSpanText("currentWithdraw", withdrawNumber);
+
+            updateSpanText("currentBalance", -1 * withdrawNumber);
+
+            document.getElementById("withdrawAmount").value = "";
         })
 
         function getInputNumber(id) {
@@ -122,14 +126,7 @@
             const total = addedNumber + currentNumber;
             document.getElementById(id).innerText = total;
         }
-
-
-
     </script>
-
-
-
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
